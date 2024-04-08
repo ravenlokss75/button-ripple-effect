@@ -13,22 +13,30 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, .3);/*give a shadow on sides of button*/
     text-decoration: none;/*remove line from under button*/
     color: black; /*changes color of letters*/
-    position: relative;/*changes the position of the element relative to the parent element and relative to itself and where it would usually be in the regular document flow of the page*/
+    position: relative;/*keeps button in position*/
+    overflow: hidden;/*keeps circle from going outside of button*/
+}
+
+.btn span{
+    position: relative;
+    z-index: 1;/*this places the text over the hover color when the pointer is over it.*/
 }
 
 /*creating hover effect*/
 .btn::before{
     content: "";/*used to place that content in the before or after pseudo-element*/
-    position: absolute;/*completely taken out of the regular flow of the web page and are based on the position of their ancestor*/
+    position: absolute;/*possitions orange box in button*/
     background-color: orangered;
-    width: 20px;
-    height: 20px;/*creates little box in the button area*/
+    width: 0;
+    height: 0;/*creates little box in the button area when 20px with and height was added changed to 0 to remove it after the hover was added*/
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);/*centers orange box*/
     border-radius: 50%;/*changes square to circle*/ 
+    transition: width 0.5s, height 0.5s;/*makes the circle change smoother*/
 }
 
 .btn:hover::before{
-    
+    width: 300px;
+    height: 300px;
 }
