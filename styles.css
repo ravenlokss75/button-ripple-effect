@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    display: flex;/*make it so i can move button*/ justify-content: center;/*moves button to top center of page*/
+    height: 100vh;/*gives me the full height of the screen*/
+    align-items: center;/*moves button down to the center of page*/
+    background-color: aliceblue;/*changes background color from white to blue*/
+    font-family: sans-serif;
+}
+.btn{
+    background-color: pink;/*button color*/
+    padding: 20px 40px;/*height and width of button*/
+    border-radius: 5px;/*roundness on edges of button*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);/*give a shadow on sides of button*/
+    text-decoration: none;/*remove line from under button*/
+    color: black; /*changes color of letters*/
+    position: relative;/*changes the position of the element relative to the parent element and relative to itself and where it would usually be in the regular document flow of the page*/
+}
+
+/*creating hover effect*/
+.btn::before{
+    content: "";/*used to place that content in the before or after pseudo-element*/
+    position: absolute;/*completely taken out of the regular flow of the web page and are based on the position of their ancestor*/
+    background-color: orangered;
+    width: 20px;
+    height: 20px;/*creates little box in the button area*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);/*centers orange box*/
+    border-radius: 50%;/*changes square to circle*/ 
+}
+
+.btn:hover::before{
+    
+}
