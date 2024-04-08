@@ -29,8 +29,8 @@ body{
     background-color: orangered;
     width: 0;
     height: 0;/*creates little box in the button area when 20px with and height was added changed to 0 to remove it after the hover was added*/
-    left: 50%;
-    top: 50%;
+    left: var(--xPos);/*changed from 50% to be able to use in js*/
+    top: var(--yPos);/*changed from 50% to be able to use in js*/
     transform: translate(-50%, -50%);/*centers orange box*/
     border-radius: 50%;/*changes square to circle*/ 
     transition: width 0.5s, height 0.5s;/*makes the circle change smoother*/
